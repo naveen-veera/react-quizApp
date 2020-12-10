@@ -1,0 +1,27 @@
+.Button {
+    padding: 15px 20px;
+    margin: 10px 5px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    background-color: #ffba93;
+}
+
+.StartQuiz {
+    display: block;
+    width: 30%;
+    margin : 150px auto;
+    padding: 25px 40px;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: rgb(15, 15, 15);
+    background-color: #ffba93;
+}
+
+.StartQuiz:hover {
+    border: 4px solid rgb(133, 86, 221);
+    transition: all 0.5s;
+}
+
+.ShowResult {
+    background-color: crimson;
+}

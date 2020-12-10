@@ -1,0 +1,13 @@
+.Card {
+    padding: 10px 15px;
+    margin: 20px auto;
+    background-color: #9f5f80;
+    border-radius: 5px;
+}
+
+.Card h4 {
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    color: white;
+}
+
