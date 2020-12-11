@@ -42,10 +42,15 @@ describe('Testing Card Component', () => {
     });
 
     describe('Testing the display content of Card Component', () => {
+
+        // Check if the component displays the question properly
+
         test('Displays the Question inside the Card question', () => {
             expect(wrapper.find('h4').text()).toBe('What color is are the leaves ?');
         })
-    
+        
+        // check if all the options are rendered according to the test data
+
         test('Displays the option inside the Card', () => {
     
             let optionsList = ['Blue', 'Red', 'Yellow', 'Green'];

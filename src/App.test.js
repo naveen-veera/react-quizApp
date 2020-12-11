@@ -33,7 +33,7 @@ describe('Testing App Component', () => {
         wrapper.unmount();
     });
 
-    
+    // After finishing all the questions, checking whether the show result button shows up
 
     test('Showing the "Show Results" button', () => {
         wrapper = mount(<App />);
@@ -45,6 +45,8 @@ describe('Testing App Component', () => {
         expect(wrapper.find('Button').last().text()).toBe(' Show Results ');
         wrapper.unmount();
     });
+
+    // checking the Banner component works after clicking the Show Results button
 
     test('Update UI After Clicking "Show Results" button', () => {
         wrapper = mount(<App />);
