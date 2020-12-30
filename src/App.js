@@ -1,8 +1,9 @@
 import { Component } from "react";
+import classes from "./App.module.css"
 import Button from "./components/UI/Button/Button";
 import Card from "./components/UI/Card/Card";
-import * as questions from "./Data/quizQuestions";
 import Banner from "./components/UI/Banner/Banner"
+import axios from "axios";
 
 class App extends Component {
 
@@ -49,9 +50,19 @@ class App extends Component {
     this.startQuiz();
   }
 
-  startQuiz = () => {
+   startQuiz = async () => {
     
-    const newQuestions = questions.getRandomQuestions(5);
+    let newQuestions = [];
+    console.log("Stared");
+    await axios.get("http://localhost:8080/")
+        .then(async (res) => {
+
+          newQuestions = await res.data;
+          console.log(newQuestions);
+
+        }).catch((error) => {
+          console.log(error);
+        })
 
     let QuestionCards = newQuestions.map((values, ind) => (
       <Card
@@ -68,7 +79,7 @@ class App extends Component {
         answer={values.answer}
       />
     ))
-    this.setState({questionSet : QuestionCards, startQuiz : true})
+    this.setState({questionSet : QuestionCards, questionsInTotal: QuestionCards.length, startQuiz : true})
   }
 
   
@@ -80,8 +91,11 @@ class App extends Component {
         <h1> <center>Quizz App</center> </h1>
         {this.state.showResult &&  <Banner>You have answered <b>{this.state.questionsCorrect} / {this.state.questionsInTotal} </b> Correctly</Banner>}
         {!this.state.startQuiz && <Button click = {this.onQuizToggler}>Start Quiz</Button>}
-        {this.state.questionSet}
-        {this.state.totalTries === 5? <Button click = {this.showEndResult}> Show Results </Button> : null}
+        <div className={classes.Questions}>
+          {this.state.questionSet}
+        </div>
+        
+        {this.state.totalTries === this.state.questionsInTotal? <Button click = {this.showEndResult}> Show Results </Button> : null}
       </div>
     )
   }
