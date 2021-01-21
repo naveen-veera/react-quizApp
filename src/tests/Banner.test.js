@@ -1,5 +1,5 @@
 import React from "react";
-import Banner from "./Banner";
+import Banner from "../components/UI/Banner/Banner";
 import { shallow, mount } from "enzyme";
 
 describe('Testing Banner Component', () => {
