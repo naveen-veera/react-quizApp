@@ -40,7 +40,7 @@ const Card = props => {
     return (
         <div className={classes.Card}>
             <h4>{props.question}</h4>
-            <div>
+            <div className={classes.CardOption}>
                 {options}
             </div>
         </div>

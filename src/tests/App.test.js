@@ -1,5 +1,5 @@
 import React from "react";
-import App from "./App";
+import App from "../App";
 import { shallow, mount } from "enzyme";
 
 
@@ -42,7 +42,7 @@ describe('Testing App Component', () => {
             expect(node.simulate('click'));
         });
         
-        expect(wrapper.find('Button').last().text()).toBe(' Show Results ');
+        expect(wrapper.find('Button').last().text()).toBe('Show Results');
         wrapper.unmount();
     });
 

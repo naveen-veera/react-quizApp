@@ -4,6 +4,7 @@ import Button from "./components/UI/Button/Button";
 import Card from "./components/UI/Card/Card";
 import Banner from "./components/UI/Banner/Banner"
 import axios from "axios";
+import questions from './Data/quizQuestions';
 
 class App extends Component {
 
@@ -52,17 +53,17 @@ class App extends Component {
 
    startQuiz = async () => {
     
-    let newQuestions = [];
+    let newQuestions = questions;
     console.log("Stared");
-    await axios.get("http://localhost:8080/")
-        .then(async (res) => {
+    // await axios.get("http://localhost:8080/")
+    //     .then(async (res) => {
 
-          newQuestions = await res.data;
-          console.log(newQuestions);
+    //       newQuestions = await res.data;
+    //       console.log(newQuestions);
 
-        }).catch((error) => {
-          console.log(error);
-        })
+    //     }).catch((error) => {
+    //       console.log(error);
+    //     })
 
     let QuestionCards = newQuestions.map((values, ind) => (
       <Card
@@ -95,7 +96,7 @@ class App extends Component {
           {this.state.questionSet}
         </div>
         
-        {this.state.totalTries === this.state.questionsInTotal? <Button click = {this.showEndResult}> Show Results </Button> : null}
+        {this.state.totalTries === this.state.questionsInTotal? <Button click = {this.showEndResult}>Show Results</Button> : null}
       </div>
     )
   }

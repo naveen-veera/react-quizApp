@@ -23,5 +23,8 @@
 }
 
 .ShowResult {
-    background-color: crimson;
+    background-color: rgb(45, 125, 113);
+    color : white;
+    display: block;
+    margin : 10px auto;
 }
