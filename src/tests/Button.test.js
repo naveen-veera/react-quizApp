@@ -6,14 +6,14 @@ describe('Testing Button Component', () => {
 
     // render the button without any error
     
-    test('Button renders without crashing', () => {
+    test('testcase8', () => {
         const wrapper = shallow(<Button />);
         expect(wrapper.instance()).toBeDefined();
     })
 
     // displays the correct text inside the component
 
-    test('Button displays the correct input passed to it', () => {
+    test('testcase9', () => {
         const TestingInput = 'Button Works'
     const wrapper = shallow(<Button>{TestingInput}</Button>)
         expect(wrapper.props().children).toBe(TestingInput)

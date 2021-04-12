@@ -7,7 +7,7 @@ var wrapper;
 describe('Testing App Component', () => {
 
    // App Component renders without crashing 
-    test('App renders without crashing', () => {
+    test('testcase1', () => {
         wrapper = mount(<App />);
         expect(wrapper.instance()).toBeDefined();
         wrapper.unmount();
@@ -15,7 +15,7 @@ describe('Testing App Component', () => {
 
     // Testing the Start Quiz button 
 
-    test('Testing the Start Button inside the App Component', () => {
+    test('testcase2', () => {
         wrapper = mount(<App />);
         expect(wrapper.find('h1 center').text()).toBe('Quizz App');
         expect(wrapper.find('button').instance()).toBeDefined();
@@ -24,7 +24,7 @@ describe('Testing App Component', () => {
 
     // Checking the UI after clicking the Start Quiz button
 
-    test('App Component after clicking the Start Button', () => {
+    test('testcase3', () => {
         wrapper = mount(<App />);
         wrapper.find('Button').simulate('click')
         wrapper.find('Button').forEach(node => {
@@ -35,7 +35,7 @@ describe('Testing App Component', () => {
 
     // After finishing all the questions, checking whether the show result button shows up
 
-    test('Showing the "Show Results" button', () => {
+    test('testcase4', () => {
         wrapper = mount(<App />);
         wrapper.find('Button').simulate('click')
         wrapper.find('Button').forEach(node => {
@@ -48,7 +48,7 @@ describe('Testing App Component', () => {
 
     // checking the Banner component works after clicking the Show Results button
 
-    test('Update UI After Clicking "Show Results" button', () => {
+    test('testcase5', () => {
         wrapper = mount(<App />);
         wrapper.find('Button').simulate('click')
         wrapper.find('Button').forEach(node => {

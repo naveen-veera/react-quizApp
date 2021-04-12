@@ -37,7 +37,7 @@ describe('Testing Card Component', () => {
     })
 
 
-    test('Card renders without crashing', () => {
+    test('testcase10', () => {
         expect(wrapper.instance()).toBeDefined();
     });
 
@@ -45,13 +45,13 @@ describe('Testing Card Component', () => {
 
         // Check if the component displays the question properly
 
-        test('Displays the Question inside the Card question', () => {
+        test('testcase11', () => {
             expect(wrapper.find('h4').text()).toBe('What color is are the leaves ?');
         })
         
         // check if all the options are rendered according to the test data
 
-        test('Displays the option inside the Card', () => {
+        test('testcase12', () => {
     
             let optionsList = ['Blue', 'Red', 'Yellow', 'Green'];
             let optionIterator = 0;
